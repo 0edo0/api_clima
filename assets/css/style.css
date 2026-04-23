@@ -1,0 +1,121 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+    background: #1e3c72;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+header h1 { font-size: 2.5rem; margin-bottom: 5px; }
+header h1 span { color: #00d4ff; }
+header p { margin-bottom: 30px; opacity: 0.8; }
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+button {
+    padding: 15px 25px;
+    border-radius: 12px;
+    border: none;
+    background: #00d4ff;
+    color: #1e3c72;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover { background: #fff; transform: translateY(-2px); }
+
+/* Tarjeta de Clima Efecto Cristal */
+.weather-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 30px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.temp-container { font-size: 4rem; font-weight: 600; margin: 10px 0; }
+.unit { font-size: 1.5rem; vertical-align: top; color: #00d4ff; }
+
+hr { margin: 20px 0; border: 0; border-top: 1px solid rgba(255,255,255,0.2); }
+
+.tip-box {
+    background: rgba(0, 212, 255, 0.2);
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 15px;
+    font-weight: 400;
+}
+
+/* Loader simple */
+.loader {
+    border: 4px solid rgba(255,255,255,0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 30px; height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* Animación de entrada para la tarjeta */
+.animate-in {
+    animation: slideUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo y animación del Icono */
+.weather-icon {
+    font-size: 5rem;
+    margin-bottom: 10px;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Cambio de color según el clima (opcional) */
+.bg-warm { background: linear-gradient(135deg, #ff9966, #ff5e62); }
+.bg-cold { background: linear-gradient(135deg, #00c6ff, #0072ff); }
+
+/* Ajuste responsive para celulares */
+@media (max-width: 480px) {
+    .container { padding: 10px; }
+    header h1 { font-size: 1.8rem; }
+    .temp-container { font-size: 3rem; }
+}

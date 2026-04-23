@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajero Pro | Clima & Equipaje</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <div class="container">
+        <header>
+            <h1>Viajero<span>Pro</span></h1>
+            <p>¿Qué debo empacar hoy?</p>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="ciudad" placeholder="Escribe una ciudad (ejm: Cusco)..." autocomplete="off">
+            <button onclick="buscarClima()">Explorar</button>
+        </div>
+
+        <div id="loader" class="loader" style="display:none;"></div>
+        
+        <!--el modal para la repuesta -->
+
+        <main id="resultado" class="weather-card" style="display:none;">
+            <div class="main-info">
+                <h2 id="nombreCiudad">Ciudad</h2>
+                <div class="temp-container">
+                    <span id="temp">0</span><span class="unit">°C</span>
+                </div>
+                <p id="descClima">Despejado</p>
+            </div>
+
+            <hr>
+
+            <div class="recommendation-section">
+                <h3>🎒 Recomendación de Equipaje:</h3>
+                <div id="tip-container" class="tip-box">
+                    <p id="recomendacion">Cargando consejos...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
