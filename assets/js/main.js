@@ -1,6 +1,5 @@
 /**
- * Función principal para buscar el clima
- * Ahora contacta DIRECTAMENTE a las APIs externas sin usar PHP
+ * Función  para buscar el clima
  */
 async function buscarClima() {
     const ciudadInput = document.getElementById('ciudad');
